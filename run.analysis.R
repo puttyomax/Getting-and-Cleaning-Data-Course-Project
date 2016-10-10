@@ -13,9 +13,9 @@ gettestdata<-function(){
 }
 
 #Get data
-setwd("~/Desktop/R/coursera/tidying data")
+
 trainlist<-gettraindata()
-setwd("~/Desktop/R/coursera/tidying data")
+
 testlist<-gettestdata()
 
 #Bind rows of X/Y/subject components
@@ -24,7 +24,7 @@ names(subject)<-"subject"
 X<-rbind(trainlist[[2]], testlist[[2]])
 Y<-rbind(trainlist[[3]], testlist[[3]])
 
-setwd("~/Desktop/R/coursera/tidying data/UCI HAR Dataset")
+
 SelectedMeasurements <- function() {
         features <- read.table("features.txt", header=FALSE, col.names=c('id', 'name'))
         selected_columns <- grep('mean\\(\\)|std\\(\\)', features$name)
